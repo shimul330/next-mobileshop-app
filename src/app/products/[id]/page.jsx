@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const ProductDetails = async ({ params }) => {
     const p = await params;
-    const res = await fetch(`http://localhost:3000/api/products/${p.id}`);
+     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/${p.id}`);
     const data = await res.json();
     console.log(data)
     return (
